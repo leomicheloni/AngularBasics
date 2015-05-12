@@ -12,3 +12,7 @@ Binding simple, ng-model indica la propiedad del viewmodel ($scope) asociada con
 #Step3
 
 Ejemplo de ng-repeat y ng-init.
+
+#Step4
+
+Ejemplo de filtro.

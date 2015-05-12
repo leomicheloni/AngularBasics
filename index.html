@@ -7,10 +7,10 @@
 </head>
 <body ng-init="dias=['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo']">
 	
-	<input type="text" ng-model="nombre"/>{{'hola ' + nombre}}
+	<input type="text" ng-model="filtro"/>
 	
 	<table>
-		<tr ng-repeat="dia in dias">
+		<tr ng-repeat="dia in dias | filter:filtro">
 			<td>{{dia}}</td>
 		</tr>
 	</table>
