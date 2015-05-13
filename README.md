@@ -30,3 +30,7 @@ La directiva ng-view sirve de contenedor para renderizar las vistas de los contr
 #Step7
 
 Ruta por defecto. Template externo.
+
+#Sterp8
+
+Ruta y detalle, lectura de parámetros con $routeParams

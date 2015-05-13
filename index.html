@@ -8,11 +8,27 @@
 	<script type="text/javascript">
 		var app = angular.module("app1", ["ngRoute"]);
 		
+		var jugadores = [{ "id" : 1  , "Nombre": "Lionel Messi"						, "Goles": 77, "Partidos": 	96	},
+						{ "id" : 2  , "Nombre": "Cristiano Ronaldo"					, "Goles": 76, "Partidos": 	116	},
+						{ "id" : 3  , "Nombre": "Raúl González"						, "Goles": 71, "Partidos": 	142	},
+						{ "id" : 4  , "Nombre": "Píses Bajos Ruud van Nistelrooy"	, "Goles": 56, "Partidos": 	73	},
+						{ "id" : 5  , "Nombre": "Thierry Henry"						, "Goles": 50, "Partidos": 	112	},
+						{ "id" : 6  , "Nombre": "Alfredo Di Stéfano"				, "Goles": 49, "Partidos": 	58	},
+						{ "id" : 7  , "Nombre": "Andriy Shevchenko"					, "Goles": 48, "Partidos": 	100	},
+						{ "id" : 8  , "Nombre": "Eusébio da Silva"					, "Goles": 46, "Partidos": 	64	},
+						{ "id" : 9  , "Nombre": "Filippo Inzaghi"					, "Goles": 46, "Partidos": 	81	},
+						{ "id" : 10 , "Nombre": "Marfil Didier Drogba"				, "Goles": 44, "Partidos": 	92	}];
+
+		
 		app.config(function($routeProvider){
 			$routeProvider.
 			when("/", {
 				controller: "MainController",
-				templateUrl: 'dias.tmpl'
+				templateUrl: 'jugadores.tmpl'
+			}).
+			when("/:id",{
+				controller: "DetailController",
+				template: "{{jugador.Nombre}}"
 			}).
 			otherwise({
 				template: "<strong>not found</strong>"
@@ -20,7 +36,13 @@
 		});
 		
 		app.controller("MainController", function($scope){
-			$scope.dias=['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];		
+			$scope.jugadores = jugadores;
+		});	
+
+		app.controller("DetailController", function($scope, $routeParams){
+			$scope.jugador = jugadores.filter(function(item){
+				return item.id == $routeParams.id;
+			})[0];
 		});	
 	
 	</script>

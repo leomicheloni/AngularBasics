@@ -1,0 +1,8 @@
+<input type="text" ng-model="filtro" />
+<table>
+<tr ng-repeat="jugador in jugadores | filter:filtro">
+	<td><a href="#/{{jugador.id}}">
+		{{jugador.Nombre}}
+	</a></td>
+</tr>
+</table>
