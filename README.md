@@ -38,3 +38,7 @@ Ruta y detalle, lectura de parámetros con $routeParams
 #Step9
 
 Servicio de llamadas Ajax $http
+
+#Step10
+	
+Factory.
