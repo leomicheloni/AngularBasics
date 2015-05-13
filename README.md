@@ -22,3 +22,11 @@ Ejemplo de filtro.
 Controller y módulo.
 
 #Step6
+
+Ruta simple.
+Agregamos la dependencia ngRoute al módulo, y lo configuramos.
+La directiva ng-view sirve de contenedor para renderizar las vistas de los controllers según la ruta.
+
+#Step7
+
+Ruta por defecto. Template externo.

@@ -12,12 +12,10 @@
 			$routeProvider.
 			when("/", {
 				controller: "MainController",
-				template: '<input type="text" ng-model="filtro"/>\
-							<table>\
-								<tr ng-repeat="dia in dias | filter:filtro">\
-									<td>{{dia}}</td>\
-								</tr>\
-							</table>'
+				templateUrl: 'dias.tmpl'
+			}).
+			otherwise({
+				template: "<strong>not found</strong>"
 			});
 		});
 		
