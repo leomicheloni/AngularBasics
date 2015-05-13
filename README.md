@@ -18,3 +18,7 @@ Ejemplo de ng-repeat y ng-init.
 Ejemplo de filtro.
 
 #Step5
+
+Controller y módulo.
+
+#Step6

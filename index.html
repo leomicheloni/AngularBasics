@@ -4,8 +4,22 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>
 	<script type="text/javascript">
-		var app = angular.module("app1", []);
+		var app = angular.module("app1", ["ngRoute"]);
+		
+		app.config(function($routeProvider){
+			$routeProvider.
+			when("/", {
+				controller: "MainController",
+				template: '<input type="text" ng-model="filtro"/>\
+							<table>\
+								<tr ng-repeat="dia in dias | filter:filtro">\
+									<td>{{dia}}</td>\
+								</tr>\
+							</table>'
+			});
+		});
 		
 		app.controller("MainController", function($scope){
 			$scope.dias=['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];		
@@ -13,15 +27,5 @@
 	
 	</script>
 </head>
-<body ng-controller="MainController">
-	
-	<input type="text" ng-model="filtro"/>
-	
-	<table>
-		<tr ng-repeat="dia in dias | filter:filtro">
-			<td>{{dia}}</td>
-		</tr>
-	</table>
-	
-</body>
+<body ng-view></body>
 </html>
