@@ -1,5 +1,15 @@
-# AngularBasics
+AngularBasics
+=============
 Ejemplos introductorios a AngularJS
+
+Para ir paso a paso:
+````batch
+git clone https://github.com/leomicheloni/AngularBasics.git
+````
+y
+````git checkout -f step1````
+Continuar cada paso haciendo lo mismo, para conocer el nombre correcto de todos los pasos en el repo hacer:
+````git tag````
 
 #Step1
 
